@@ -21,7 +21,7 @@ class Box extends Component {
         return (
             <li key={this.props.id}>
                 <div style={boxStyle}></div>
-                <button onClick={this.handleClick}>Delete!</button>
+                <button onClick={this.handleClick}>X</button>
             </li>
         )
     }

@@ -12,6 +12,7 @@ class NewBoxForm extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    // Takes in form data and sends it to parent function.
     handleSubmit(evt) {
         evt.preventDefault();
         this.props.handleAddBox(this.state);
@@ -22,10 +23,12 @@ class NewBoxForm extends Component {
         })
     }
 
+    // Keeps track of changes in state and input field.
     handleChange(evt) {
         this.setState({ [evt.target.name]: evt.target.value });
     }
 
+    // Display box design form.
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
