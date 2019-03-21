@@ -19,7 +19,5 @@ it('renders without crashing', () => {
       const bgColorInput = wrapper.find("#bgColor");
       bgColorInput.instance().value = "corn"
       bgColorInput.simulate("change");
-      console.log("What is in state?", wrapper.state());
-      console.log(bgColorInput.debug());
       expect (wrapper.state().bgColor).toEqual("corn");
   });
