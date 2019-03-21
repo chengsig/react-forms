@@ -20,14 +20,22 @@ class BoxList extends Component {
         }));
     }
 
+    deleteBox(id) {
+        this.setState(st => ({
+            boxes: st.boxes.filter(box => box.id !== id)
+        }));
+    }
+
     renderBox() {
         return (
             <ul>
-                {this.state.boxes.map(box => ()
-                    <li key={box.id}>
-                        <Box/>    add props, delete function and delete button 
-                    </li>
-                    )}
+                {this.state.boxes.map(box => (
+                    <Box key={box.id} 
+                        height={box.height}
+                        width={box.width}
+                        bgColor={box.bgColor}
+                        triggerDelete={() => this.deleteBox(box.id)}/>
+                ))}
             </ul>
         )
     }
